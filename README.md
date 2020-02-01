@@ -1,12 +1,12 @@
 # spark
 Spark Scala driver scripts.
 
-### Movie Similarities
-Recommendation system that works with the MovieLens dataset accesible from https://grouplens.org/datasets/movielens/
+### Recommender System: Movie Similarities
+The goal of this project is to develop a recommendation system for the MovieLens dataset (accesible from https://grouplens.org/datasets/movielens/). The input is the target movie ID and the output is a list of movies ranked by similarity score and strength of recommendation.
 
-Uses Spark to perform distributed item-based collaborative filtering using the Cosine Similarity metric to recommend a maximum of 10 movies similar to a specified movie. 
+The model uses Spark to perform distributed item-based collaborative filtering using the Cosine Similarity metric to recommend a maximum of 10 movies similar to a specified movie. The strength of the prediction (proxy for confidence) is based on how many movies were avaiable to compute the similarity score. The higher the number of movies, the stronger our prediction is going to be.
 
-I have developed the script to run on my local machine using all cores. To run it on a cluster, just change how the SparkContext is initialized to clarify your cluster and specify the path to the distribuetd file system when loading the data (hdfs, s3, ...).
+The Spark project is developed to be able to process big datasets in a parallel fashion. For testing purposes, I have developed the script to run on my local machine using all cores. To run it on a cluster, just change how the SparkContext is initialized to clarify your cluster and specify the path to the distribuetd file system when loading the data (hdfs, s3, ...).
 
 To run the script in the command line, create JAR file form the package and use `spark-submit` specifying the target movieID:
 ```
