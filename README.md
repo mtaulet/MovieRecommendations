@@ -1,5 +1,5 @@
-# spark
-Spark Scala driver scripts.
+# Movie Recommendations
+Recommender System based on Movie Similarities with Spark Scala.
 
 ### Recommender System: Movie Similarities
 The goal of this project is to develop a recommendation system for the MovieLens dataset (accesible from https://grouplens.org/datasets/movielens/). The input is the target movie ID and the output is a list of movies ranked by similarity score and strength of recommendation.
